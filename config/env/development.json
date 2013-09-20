@@ -1,0 +1,6 @@
+{
+    "db": "http://localhost:5984/ng-pouch/",
+    "app": {
+        "name": "MEAN - A Modern Stack - Development"
+    }
+}

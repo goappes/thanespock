@@ -1,0 +1,53 @@
+<section data-ng-controller="IndexController">
+	<h1>This is the home view</h1>
+</section>
+
+<div ng-controller="MyCtrl">
+    
+    <p>Keep track of your players! How many goals did they score?</p>
+  
+    <div>
+      John
+      <button ng-click="incScore('1')">Increase Score</button>
+      <span class="score">{{score['1']}}</span>
+    </div>
+    <div>
+      Jack
+      <button ng-click="incScore('2')">Increase Score</button>
+      <span class="score">{{score['2']}}</span>
+    </div>
+    <div>
+      Luke
+      <button ng-click="incScore('3')">Increase Score</button>
+      <span class="score">{{score['3']}}</span>
+    </div>
+    
+  </div>
+
+  <div class="container" ng-controller="TodoCtrl">
+    <h1>TODO application</h1>
+
+    <p>
+      <form class="form-inline" ng-submit="submit()">
+        <input placeholder="New task" type="text" ng-model="text" />
+        <input class="btn btn-primary" type="submit" value="Add" />
+      </form>
+    </p>
+
+    <table class="table table-hover span3">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr ng-repeat="todo in todos">
+          <td>{{todo.text}}</td>
+          <td><a class="btn btn-mini btn-danger" ng-click="remove(todo._id)" href="#">remove</a></td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
