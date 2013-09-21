@@ -2,7 +2,7 @@ var async = require('async'),
     passport = require('passport'),
     auth = require('./middlewares').authorization;
 
-module.exports = function(app) {
+module.exports = function (app) {
     // User Routes
     var users = require('../app/controllers/users');
     app.get('/signin', users.signin);
