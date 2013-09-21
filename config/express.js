@@ -9,14 +9,14 @@ var express = require('express'),
     forward = require('../forward'),
     middlewares = require('./middlewares');
 
-module.exports = function(app) {
+module.exports = function (app) {
     // Should be placed before express.static
-    // app.use(express.compress({
-    //     filter: function(req, res) {
-    //         return (/json|text|javascript|css/).test(res.getHeader('Content-Type'));
-    //     },
-    //     level: 9
-    // }));
+    app.use(express.compress({
+      filter: function (req, res) {
+        return (/json|text|javascript|css/).test(res.getHeader('Content-Type'));
+      },
+      level: 9
+    }));
 
     // Proxy to couchdb
     app.use(forward(/\/db\/(.*)/, config.db));
