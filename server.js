@@ -13,7 +13,6 @@ var express = require('express'),
 // Load configurations
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development',
     config = require('./config/config'),
-    auth = require('./config/middlewares/authorization'),
     lazyboy = require('LazyBoy');
 
 // Bootstrap db connection
@@ -35,7 +34,7 @@ require('./config/exceptions');
 require('./config/express')(app);
 
 // Bootstrap routes
-require('./config/routes')(app, auth);
+require('./config/routes')(app);
 
 // Start the app by listening on <port>
 var port = config.port;
